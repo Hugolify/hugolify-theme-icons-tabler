@@ -1,0 +1,22 @@
+module:
+
+  mounts:
+    # Local assets add to the imported Tabler icons below: aliases of the
+    # names the Hugolify themes call directly (play, pause, contact-round),
+    # which Tabler draws under other names. They only matter when Tabler is
+    # the default set (params.icons.set: tabler). See README.
+    - source: assets
+      target: assets
+
+  imports:
+
+    # Tabler outline icons. Mounted to assets/icons/tabler, the folder of the
+    # set named "tabler": "tabler:name" resolves here, and so do names written
+    # without a prefix when a site sets params.icons.set to tabler.
+    # Tabler tags its releases, but ships no go.mod: Go names them
+    # v3.x.y+incompatible.
+    - path: github.com/tabler/tabler-icons
+      ignoreConfig: true
+      mounts:
+        - source: icons/outline
+          target: assets/icons/tabler
